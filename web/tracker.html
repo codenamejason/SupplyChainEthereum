@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title> Supply Chain Tracking System<span> SCTS </title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="https://s24.postimg.org/t6rucdmid/ETHEREUM_YOUTUBE_PROFILE_PIC.png" type="image/png">
+		<link rel="icon" href="https://s24.postimg.org/t6rucdmid/ETHEREUM_YOUTUBE_PROFILE_PIC.png" type="image/png">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/extra.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollgress.min.js"></script>
+
+	    <script type="text/javascript" src="assets/js/llqrcode.js"></script>
+	    <script type="text/javascript" src="assets/js/webqr.js"></script>
+
+		<script src="assets/js/ProductABI.js"></script>
+		<script src="assets/js/DatabaseABI.js"></script>
+		<script src="assets/js/ethereum.js"></script>
+
+		<script type="text/javascript" src="assets/js/jquery.subwayMap-0.5.0.js"></script>
+		<script src="assets/js/data.js"></script>
+
+		<script>
+			var scanQR = function() {
+				$('#qr-video').css('display', 'block');
+				$('#address_field').css('display', 'none');
+				$('#results-content').html('');
+				alreadyRead = false;
+				rendered = false;
+				if($('#mainbody').length == 0){
+					$('#qr-video').append('\
+						<div id="mainbody"> \
+								<table class="tsel" border="0" width="100%"> \
+										<tr><td valign="top" align="center" width="50%"> \
+												<div id="outdiv"></div> \
+										</td></tr> \
+										<tr><td colspan="3" align="center"> \
+												<div id="result"></div> \
+										</td></tr> \
+								</table> \
+						</div> \
+						<canvas style="display: none;" id="qr-canvas" width="640" height="480"></canvas> \
+					');
+				}
+				alreadyRead = false;
+				rendered = false;
+				load();
+			};
+
+			var type_text = function(){
+				if($('#address_field').css('display') == 'none'){
+					$('#qr-video').css('display', 'none');
+				    $('#address_field').css('display', 'block');
+					$('#results-content').html('');
+				}else{
+					processAddress($('#address_field').val());
+				}
+			}
+		</script>
+
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1 id="logo"><a href="index.html">SCTS <strong> Supply Chain Tracking System  </strong></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="tracker.html">Tracker</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li>
+								<a href="https://github.com/anrodon/tracking-blockchain" class="icon fa-github" style="font-size: 25px; padding: 0.05em 0.3em; top: 0.1em;">
+		</a>
+		</li>
+		</ul>
+		</nav>
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+
+				<header>
+					<h2>SCTS Tracker</h2>
+					<p>Get inside SCTS</p>
+				</header>
+
+			</div>
+
+		</section>
+
+		<!-- Main -->
+		<article id="main">
+			<header id="tracker-content" class="special container">
+				<img style="margin-top: -200px;" src="https://s24.postimg.org/t6rucdmid/ETHEREUM_YOUTUBE_PROFILE_PIC.png" />
+				<script>
+					setTimeout(function () {}, 200);
+					if (typeof web3 !== 'undefined') {
+						loadContracts();
+						$('#tracker-content').append('\
+							<div style="margin: 10px"> \
+								<p><p> \
+								<h4>Introduce an address</h4> \
+								<input style="margin: 10px; margin-top: 70px;" type="text" id="address_field" placeholder="Product or Handler address" class="focus"> \
+								<input style="margin: 10px" type="submit" onclick="type_text()" value="Search"> \
+								<input style="margin: 10px" type="submit" onClick="scanQR()" value="Scan QR Code"> \
+								<div id="qr-video"></div> \
+								<div id="results-content"></div> \
+							</div> \
+						');
+					} else {
+						$('#tracker-content').append('\
+						<h1>You need an Ethereum powered browser to use this feature</h1> \
+						<h3>Use <strong><a href="https://github.com/ethereum/mist/releases">Mist</a></strong> or the <strong><a href="https://metamask.io/">Metamask</a></strong> plugin</h3> \
+						');
+					}
+				</script>
+		</header>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://github.com/anrodon/tracking-blockchain" class="icon circle fa-github"><span class="label">Github</span></a>
+		</li>
+		</ul>
+
+		<ul class="copyright">
+			<li>&copy; SCTS - Supply Chain Tracking System</li>
+			<li>2017</li>
+		</ul>
+		</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.1.4/async.js"></script>
+		</body>
+
+</html>
