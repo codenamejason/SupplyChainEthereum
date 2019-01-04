@@ -173,7 +173,6 @@ contract Product {
 }
 
 /* @title Product Factory Contract
-   @author Andreu Rodíguez i Donaire
    @dev This contract represents a product factory which represents products to be tracked in
    the TODO put name of platform ** platform. This product lets the handlers to register actions
    on it or even combine it with other products. */
