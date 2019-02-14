@@ -18,5 +18,5 @@ It's as easy as playing a game. SCTS is designed following game theories, so it 
 
 ## What's the SCTS Database contract address?
 
-The Ropsten testnet contract address for the SCTS Database is `0xec9CAab87327Cf406Ba251cb4BcEbAFfcD794357`, here you can see more about the contract at [Etherscan](https://testnet.etherscan.io/address/0xec9caab87327cf406ba251cb4bcebaffcd794357).
+The Ropsten testnet contract address for the SCTS Database is `0xe30c4bca2aa3f2e23f4759bca13c034d97d312fe`, here you can see more about the contract at [Etherscan](https://testnet.etherscan.io/address/0xe30c4bca2aa3f2e23f4759bca13c034d97d312fe).
 
